@@ -1,0 +1,60 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 0.8909
+margin_right = 1027.89
+margin_bottom = 606.0
+color = Color( 0.137255, 0.105882, 0.105882, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="."]
+margin_left = 236.979
+margin_top = 428.522
+margin_right = 731.979
+margin_bottom = 475.522
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 765.282
+margin_top = 435.649
+margin_right = 869.282
+margin_bottom = 468.649
+text = "Search"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="TextEdit" type="TextEdit" parent="."]
+margin_left = 141.653
+margin_top = 32.9633
+margin_right = 912.653
+margin_bottom = 402.963
+readonly = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 112.691
+margin_top = 441.054
+margin_right = 227.691
+margin_bottom = 464.054
+text = "Enter a country:"
+[connection signal="text_entered" from="LineEdit" to="." method="_on_LineEdit_text_entered"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
