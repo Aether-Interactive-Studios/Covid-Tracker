@@ -8,70 +8,6 @@
 
 config_version=4
 
-_global_script_classes=[ {
-"base": "Control",
-"class": "CSVEditor",
-"language": "GDScript",
-"path": "res://addons/file-editor/scripts/CSVEditor.gd"
-}, {
-"base": "Reference",
-"class": "Calendar",
-"language": "GDScript",
-"path": "res://addons/calendar_button/class/calendar.gd"
-}, {
-"base": "Reference",
-"class": "CalendarButtons",
-"language": "GDScript",
-"path": "res://addons/calendar_button/scripts/calendar_buttons.gd"
-}, {
-"base": "HBoxContainer",
-"class": "ContributorClass",
-"language": "GDScript",
-"path": "res://addons/github-integration/scripts/ContributorClass.gd"
-}, {
-"base": "Reference",
-"class": "Date",
-"language": "GDScript",
-"path": "res://addons/calendar_button/class/Date.gd"
-}, {
-"base": "PanelContainer",
-"class": "GistItem",
-"language": "GDScript",
-"path": "res://addons/github-integration/scripts/GistItem.gd"
-}, {
-"base": "HTTPRequest",
-"class": "GoogleTranslateAPI",
-"language": "GDScript",
-"path": "res://addons/file-editor/scripts/GoogleTranslatorAPI.gd"
-}, {
-"base": "HBoxContainer",
-"class": "InvitationItem",
-"language": "GDScript",
-"path": "res://addons/github-integration/scripts/InvitationItem.gd"
-}, {
-"base": "PanelContainer",
-"class": "RepositoryItem",
-"language": "GDScript",
-"path": "res://addons/github-integration/scripts/RepositoryItem.gd"
-}, {
-"base": "Reference",
-"class": "WindowRestrictor",
-"language": "GDScript",
-"path": "res://addons/calendar_button/scripts/window_restrictor.gd"
-} ]
-_global_script_class_icons={
-"CSVEditor": "",
-"Calendar": "",
-"CalendarButtons": "",
-"ContributorClass": "",
-"Date": "",
-"GistItem": "",
-"GoogleTranslateAPI": "",
-"InvitationItem": "",
-"RepositoryItem": "",
-"WindowRestrictor": ""
-}
-
 [application]
 
 config/name="Covid Tracker"
@@ -80,17 +16,21 @@ config/icon="res://icon.png"
 
 [autoload]
 
-PluginSettings="*res://addons/github-integration/scripts/PluginSettings.gd"
-IconLoaderGithub="*res://addons/github-integration/scripts/IconLoaderGithub.gd"
-UserData="*res://addons/github-integration/scripts/user_data.gd"
-RestHandler="*res://addons/github-integration/scenes/RestHandler.tscn"
-LastOpenedFiles="*res://addons/file-editor/scripts/LastOpenedFiles.gd"
 Globals="*res://Globals.gd"
+
+[display]
+
+window/stretch/mode="2d"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/calendar_button/plugin.cfg", "res://addons/easy_charts/plugin.cfg", "res://addons/file-editor/plugin.cfg", "res://addons/github-integration/plugin.cfg" )
+enabled=PoolStringArray(  )
+
+[global]
+
+display=false
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
 environment/default_environment="res://default_env.tres"

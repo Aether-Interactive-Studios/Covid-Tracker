@@ -124,3 +124,13 @@ func _on_request_completed(result, response_code, headers, body):
 #func _on_LineEdit_text_entered(new_text):
 #	_on_Button_pressed()
 #	pass # Replace with function body.
+
+
+
+
+
+
+
+func _on_Button_pressed(state):
+	print(state)
+	pass # Replace with function body.
