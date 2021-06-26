@@ -7,21 +7,28 @@ var save = File.new()
 var data
 
 
+func httpreq():
+	$HTTPRequest.connect("request_completed", self, "_on_request_completed")
+	$HTTPRequest.request("https://energ.ee/covid19-us-api/states.json")
 
 
 func _ready():
 	if not save.file_exists(location):
-		$HTTPRequest.connect("request_completed", self, "_on_request_completed")
-		$HTTPRequest.request("https://covid-api.mmediagroup.fr/v1/cases")
-		$HTTPRequest.request("https://localcoviddata.com/covid19/v1/high-level-policy?country=USA")
+		httpreq()
+#		$HTTPRequest.request("https://covid-api.mmediagroup.fr/v1/cases")
+#		$HTTPRequest.request("https://localcoviddata.com/covid19/v1/high-level-policy?country=USA")
+
+		
 		
 	else: #if save exists
 		read()
+		
 
 func read():
 	save.open(location, File.READ)
 	data = parse_json(save.get_as_text())
 	save.close()
+	
 
 
 func _on_request_completed(result, response_code, headers, body):
@@ -30,7 +37,7 @@ func _on_request_completed(result, response_code, headers, body):
 	var out = true
 
 	data = json.result
-
+	
 
 	save.open(location, File.WRITE)
 	save.store_string(to_json(data))
@@ -132,5 +139,37 @@ func _on_request_completed(result, response_code, headers, body):
 
 
 func _on_Button_pressed(state):
+	$Buttons/ME.visible = false
 	print(state)
+	var disp = $Disp
+	
+	disp.visible= true
+#	disp.text = state
+	print(data[state][-1])
+	var infodata = state + " " + str(data[state][-1]["date"]) + " Confirmed cases: " + str(data[state][-1]['confirmed'])  + "  Deaths: " + str(data[state][-1]['deaths'] + "\n")
+	
+#	var output = data[state][-1]["date"]
+#	$Disp/Label.text = infodata
+	var wholetext = ""
+	for x in range(1,90):
+		var idx = (-1 * x)
+		infodata = state + " " + str(data[state][idx]["date"]) + " Confirmed cases: " + str(data[state][idx]['confirmed'])  + "  Deaths: " + str(data[state][idx]['deaths'] + "\n")
+		wholetext += infodata
+		
+		
+		
+		$Disp/Label.text = wholetext
+#	print(data[state].length())
+	
+	pass # Replace with function body.
+
+
+func _on_Refresh_pressed():
+	httpreq()
+	pass # Replace with function body.
+
+
+func _on_X_pressed():
+	$Disp.visible = false
+	$Buttons/ME.visible = true
 	pass # Replace with function body.

@@ -1,0 +1,43 @@
+[gd_scene format=2]
+
+[node name="Disp" type="TextEdit"]
+visible = false
+modulate = Color( 1, 1, 1, 0.756863 )
+anchor_bottom = 0.014
+margin_left = 13.0
+margin_top = 43.0
+margin_right = 1012.0
+margin_bottom = 550.6
+readonly = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 83.2446
+margin_top = 39.2438
+margin_right = 900.245
+margin_bottom = 280.244
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="X" type="Button" parent="."]
+margin_left = 825.0
+margin_top = 6.0
+margin_right = 994.0
+margin_bottom = 75.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "X"
+flat = true
+
+[node name="Refresh" type="Button" parent="."]
+margin_left = 734.139
+margin_top = 420.924
+margin_right = 977.139
+margin_bottom = 501.924
+text = "Refresh"
+__meta__ = {
+"_edit_use_anchors_": false
+}
