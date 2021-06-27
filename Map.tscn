@@ -637,6 +637,7 @@ __meta__ = {
 }
 
 [node name="Disp" type="TextEdit" parent="."]
+visible = false
 modulate = Color( 1, 1, 1, 0.756863 )
 anchor_bottom = 0.014
 margin_left = 13.0
