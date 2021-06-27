@@ -637,7 +637,6 @@ __meta__ = {
 }
 
 [node name="Disp" type="TextEdit" parent="."]
-visible = false
 modulate = Color( 1, 1, 1, 0.756863 )
 anchor_bottom = 0.014
 margin_left = 13.0
@@ -658,10 +657,10 @@ __meta__ = {
 
 [node name="Label" type="TextEdit" parent="Disp"]
 modulate = Color( 1, 1, 1, 0.466667 )
-margin_left = 306.622
-margin_top = 29.5676
-margin_right = 748.622
-margin_bottom = 481.568
+margin_left = 255.0
+margin_top = 30.0
+margin_right = 765.0
+margin_bottom = 482.0
 custom_colors/font_color_readonly = Color( 1, 1, 1, 1 )
 readonly = true
 __meta__ = {
