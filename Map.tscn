@@ -12,10 +12,10 @@ __meta__ = {
 }
 
 [node name="Picture" type="TextureRect" parent="."]
-margin_left = 0.75298
-margin_top = 0.229419
-margin_right = 1024.75
-margin_bottom = 600.229
+margin_left = 0.0584919
+margin_top = -0.0200012
+margin_right = 1024.06
+margin_bottom = 599.98
 texture = ExtResource( 1 )
 expand = true
 __meta__ = {
@@ -23,17 +23,41 @@ __meta__ = {
 }
 
 [node name="Buttons" type="Control" parent="."]
-visible = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TX" type="Button" parent="Buttons"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 348.293
-margin_top = 406.0
-margin_right = 510.293
-margin_bottom = 519.0
+margin_left = 350.181
+margin_top = 405.056
+margin_right = 512.181
+margin_bottom = 518.056
+flat = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AK" type="Button" parent="Buttons"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 41.4823
+margin_top = 453.202
+margin_right = 160.482
+margin_bottom = 584.202
+flat = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HI" type="Button" parent="Buttons"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 249.0
+margin_top = 507.0
+margin_right = 381.0
+margin_bottom = 550.0
+rect_rotation = 23.2
 flat = true
 clip_text = true
 __meta__ = {
@@ -657,6 +681,7 @@ __meta__ = {
 }
 
 [node name="Label" type="TextEdit" parent="Disp"]
+visible = false
 modulate = Color( 1, 1, 1, 0.466667 )
 margin_left = 255.0
 margin_top = 30.0
@@ -689,6 +714,8 @@ __meta__ = {
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
 [connection signal="pressed" from="Buttons/TX" to="." method="_on_Button_pressed" binds= [ "Texas" ]]
+[connection signal="pressed" from="Buttons/AK" to="." method="_on_Button_pressed" binds= [ "Alaska" ]]
+[connection signal="pressed" from="Buttons/HI" to="." method="_on_Button_pressed" binds= [ "Hawaii" ]]
 [connection signal="pressed" from="Buttons/WS" to="." method="_on_Button_pressed" binds= [ "West Virginia" ]]
 [connection signal="pressed" from="Buttons/Washington DC" to="." method="_on_Button_pressed" binds= [ "District of Columbia" ]]
 [connection signal="pressed" from="Buttons/MD" to="." method="_on_Button_pressed" binds= [ "Maryland" ]]
