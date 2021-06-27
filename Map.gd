@@ -45,8 +45,9 @@ func _on_request_completed(result, response_code, headers, body):
 	save.open(location, File.WRITE)
 	save.store_string(to_json(data))
 	save.close()
-	$Buttons.visible = true
 	read()
+	$Buttons.visible = true
+	
 
 
 
