@@ -14,6 +14,7 @@ func httpreq():
 
 func _ready():
 	if not save.file_exists(location):
+		$Buttons.visible = false
 		httpreq()
 #		$HTTPRequest.request("https://covid-api.mmediagroup.fr/v1/cases")
 #		$HTTPRequest.request("https://localcoviddata.com/covid19/v1/high-level-policy?country=USA")
@@ -22,6 +23,7 @@ func _ready():
 		
 	else: #if save exists
 		read()
+		$Buttons.visible = true
 		
 
 func read():
@@ -32,6 +34,7 @@ func read():
 
 
 func _on_request_completed(result, response_code, headers, body):
+	print("done")
 	var place
 	var json = JSON.parse(body.get_string_from_utf8())
 	var out = true
@@ -42,7 +45,7 @@ func _on_request_completed(result, response_code, headers, body):
 	save.open(location, File.WRITE)
 	save.store_string(to_json(data))
 	save.close()
-
+	$Buttons.visible = true
 
 
 
@@ -145,7 +148,7 @@ func _on_Button_pressed(state):
 	
 	disp.visible= true
 #	disp.text = state
-	print(data[state][-1])
+#	print(data[state][-1])
 	var infodata = state + " " + str(data[state][-1]["date"]) + " Confirmed cases: " + str(data[state][-1]['confirmed'])  + "  Deaths: " + str(data[state][-1]['deaths'] + "\n")
 	
 #	var output = data[state][-1]["date"]
