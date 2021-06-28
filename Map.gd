@@ -145,7 +145,7 @@ func _on_Button_pressed(state):
 #	disp.text = state
 #	print(data[state][-1])
 	var infodata = state + " " + str(data[state][-1]["date"]) + " Confirmed cases: " + str(data[state][-1]['confirmed'])  + "  Deaths: " + str(data[state][-1]['deaths'] + "\n")
-	
+	print(str(infodata))
 #	var output = data[state][-1]["date"]
 #	$Disp/Label.text = infodata
 	var wholetext = ""
