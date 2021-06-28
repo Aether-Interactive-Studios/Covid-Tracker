@@ -33,7 +33,7 @@ func _on_request_completed(result, response_code, headers, body):
 		print(text)
 		text = "Active Cases: " + str(place["confirmed"])
 		
-		text += "\nDead: " + str(place["deaths"])
+		text += "\nDead: " + str(place["Deaths"])
 		
 		$TextEdit.text = text
 	else:
