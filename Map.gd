@@ -156,14 +156,14 @@ func _on_Button_pressed(state):
 	var newidx = 30
 	for x in range(1,90):
 		var idx = (-1 * x)
-		infodata = state + " " + str(data[state][idx]["date"]) + " Confirmed cases: " + str(data[state][idx]['confirmed'])  + "  Deaths: " + str(data[state][idx]['deaths'] + "\n")
+		infodata ="  "+ state + " " + str(data[state][idx]["date"]) + " Confirmed cases: " + str(data[state][idx]['confirmed'])  + "  Deaths: " + str(data[state][idx]['deaths'] + "\n")
 		wholetext += infodata
 		
 		
 		if newidx % 10 == 0 && newidx < lastday:
 			print(str(newidx))
 			
-			$Disp/main.reset( (data[state][newidx]['confirmed']), (data[state][newidx]['deaths']), newidx  )
+#			$Disp/main.reset( (data[state][newidx]['confirmed']), (data[state][newidx]['deaths']), newidx  )
 			newidx += 30
 		$Disp/Label.text = wholetext
 #	print(data[state].length())

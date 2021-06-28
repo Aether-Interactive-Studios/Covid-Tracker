@@ -1,23 +1,14 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://usa.png" type="Texture" id=1]
 [ext_resource path="res://Map.gd" type="Script" id=2]
 [ext_resource path="res://Fonts/Roboto-Regular.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://addons/ChartGraph/assets/fonts/THSarabunNew.tres" type="DynamicFont" id=4]
-[ext_resource path="res://example_ChartGraph/example.gd" type="Script" id=5]
-[ext_resource path="res://addons/ChartGraph/script.gd" type="Script" id=6]
-[ext_resource path="res://addons/ChartGraph/icon.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 3 )
 
 [sub_resource type="Theme" id=2]
 default_font = SubResource( 1 )
-
-[sub_resource type="ButtonGroup" id=3]
-resource_name = "decoration"
-
-[sub_resource type="ButtonGroup" id=4]
 
 [node name="Map" type="Control"]
 anchor_right = 1.0
@@ -678,6 +669,7 @@ __meta__ = {
 }
 
 [node name="Disp" type="TextEdit" parent="."]
+visible = false
 modulate = Color( 1, 1, 1, 0.756863 )
 anchor_bottom = 0.014
 margin_left = 13.0
@@ -687,199 +679,6 @@ margin_bottom = 550.6
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="main" type="Control" parent="Disp"]
-margin_left = -13.0
-margin_top = -43.0
-margin_right = 27.0
-margin_bottom = -3.0
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="chart" type="ReferenceRect" parent="Disp/main"]
-margin_left = 176.102
-margin_top = 55.7551
-margin_right = 886.102
-margin_bottom = 275.755
-rect_min_size = Vector2( 256, 128 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-script = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false,
-"_editor_icon": ExtResource( 7 )
-}
-label_font = ExtResource( 4 )
-grid_color = Color( 0.0666667, 0.0901961, 0.109804, 0.694118 )
-chart_background_opacity = 0.15
-
-[node name="group" type="Control" parent="Disp/main"]
-margin_left = 27.1008
-margin_top = 117.857
-margin_right = 27.1008
-margin_bottom = 117.857
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="noLabel" type="CheckBox" parent="Disp/main/group"]
-margin_right = 132.0
-margin_bottom = 23.0
-custom_colors/font_color = Color( 0.172549, 0.192157, 0.215686, 1 )
-custom_colors/font_color_hover = Color( 0.172549, 0.192157, 0.215686, 1 )
-custom_colors/font_color_pressed = Color( 0.172549, 0.192157, 0.215686, 1 )
-pressed = true
-action_mode = 0
-group = SubResource( 3 )
-text = "No label"
-
-[node name="ordinate" type="CheckBox" parent="Disp/main/group"]
-margin_top = 23.0
-margin_right = 132.0
-margin_bottom = 46.0
-custom_colors/font_color = Color( 0.172549, 0.192157, 0.215686, 1 )
-custom_colors/font_color_hover = Color( 0.172549, 0.192157, 0.215686, 1 )
-custom_colors/font_color_pressed = Color( 0.172549, 0.192157, 0.215686, 1 )
-action_mode = 0
-group = SubResource( 3 )
-text = "Ordinates labels"
-
-[node name="absciss" type="CheckBox" parent="Disp/main/group"]
-margin_top = 46.0
-margin_right = 132.0
-margin_bottom = 69.0
-custom_colors/font_color = Color( 0.172549, 0.192157, 0.215686, 1 )
-custom_colors/font_color_hover = Color( 0.172549, 0.192157, 0.215686, 1 )
-custom_colors/font_color_pressed = Color( 0.172549, 0.192157, 0.215686, 1 )
-action_mode = 0
-group = SubResource( 3 )
-text = "Abscisses labels"
-
-[node name="legend" type="CheckBox" parent="Disp/main/group"]
-margin_top = 69.0
-margin_right = 132.0
-margin_bottom = 92.0
-custom_colors/font_color = Color( 0.172549, 0.192157, 0.215686, 1 )
-custom_colors/font_color_hover = Color( 0.172549, 0.192157, 0.215686, 1 )
-custom_colors/font_color_pressed = Color( 0.172549, 0.192157, 0.215686, 1 )
-action_mode = 0
-group = SubResource( 3 )
-text = "Legend labels"
-
-[node name="all" type="CheckBox" parent="Disp/main/group"]
-margin_top = 92.0
-margin_right = 132.0
-margin_bottom = 115.0
-custom_colors/font_color = Color( 0.172549, 0.192157, 0.215686, 1 )
-custom_colors/font_color_hover = Color( 0.172549, 0.192157, 0.215686, 1 )
-custom_colors/font_color_pressed = Color( 0.172549, 0.192157, 0.215686, 1 )
-action_mode = 0
-group = SubResource( 3 )
-text = "All labels"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="split" type="ColorRect" parent="Disp/main"]
-margin_left = 28.0
-margin_top = 243.0
-margin_right = 160.0
-margin_bottom = 244.0
-rect_min_size = Vector2( 132, 1 )
-color = Color( 0, 0, 0, 1 )
-
-[node name="groupType" type="Control" parent="Disp/main"]
-margin_left = 27.1008
-margin_top = 252.731
-margin_right = 27.1008
-margin_bottom = 252.731
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="line" type="CheckBox" parent="Disp/main/groupType"]
-margin_right = 132.0
-margin_bottom = 23.0
-custom_colors/font_color = Color( 0.172549, 0.192157, 0.215686, 1 )
-custom_colors/font_color_hover = Color( 0.172549, 0.192157, 0.215686, 1 )
-custom_colors/font_color_pressed = Color( 0.172549, 0.192157, 0.215686, 1 )
-pressed = true
-action_mode = 0
-group = SubResource( 4 )
-text = "Line chart"
-
-[node name="pie" type="CheckBox" parent="Disp/main/groupType"]
-margin_top = 23.0
-margin_right = 132.0
-margin_bottom = 46.0
-custom_colors/font_color = Color( 0.172549, 0.192157, 0.215686, 1 )
-custom_colors/font_color_hover = Color( 0.172549, 0.192157, 0.215686, 1 )
-custom_colors/font_color_pressed = Color( 0.172549, 0.192157, 0.215686, 1 )
-action_mode = 0
-group = SubResource( 4 )
-text = "Pie chart"
-
-[node name="container" type="VBoxContainer" parent="Disp/main"]
-margin_left = 360.0
-margin_top = 20.0
-margin_right = 680.0
-margin_bottom = 96.0
-mouse_filter = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="controls" type="HBoxContainer" parent="Disp/main/container"]
-margin_right = 320.0
-margin_bottom = 48.0
-mouse_filter = 0
-custom_constants/separation = 64
-
-[node name="clear" type="Button" parent="Disp/main/container/controls"]
-margin_right = 128.0
-margin_bottom = 48.0
-rect_min_size = Vector2( 128, 48 )
-text = "Clear"
-
-[node name="add_data" type="Button" parent="Disp/main/container/controls"]
-margin_left = 192.0
-margin_right = 320.0
-margin_bottom = 48.0
-rect_min_size = Vector2( 128, 48 )
-text = "Add data"
-
-[node name="maxValues" type="SpinBox" parent="Disp/main/container"]
-margin_top = 52.0
-margin_right = 320.0
-margin_bottom = 81.0
-min_value = 3.0
-max_value = 90.0
-value = 12.0
-rounded = true
-
-[node name="benchmark" type="VBoxContainer" parent="Disp/main"]
-margin_right = 40.0
-margin_bottom = 40.0
-mouse_filter = 0
-
-[node name="fps" type="Label" parent="Disp/main/benchmark"]
-margin_right = 128.0
-margin_bottom = 32.0
-rect_min_size = Vector2( 128, 32 )
-mouse_filter = 1
-size_flags_vertical = 0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-
-[node name="points" type="Label" parent="Disp/main/benchmark"]
-margin_top = 36.0
-margin_right = 128.0
-margin_bottom = 68.0
-rect_min_size = Vector2( 128, 32 )
-mouse_filter = 1
-size_flags_vertical = 0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
 
 [node name="Filler" type="TextEdit" parent="Disp"]
 visible = false
@@ -892,7 +691,7 @@ __meta__ = {
 [node name="Label" type="TextEdit" parent="Disp"]
 modulate = Color( 1, 1, 1, 0.466667 )
 margin_left = 255.0
-margin_top = 254.0
+margin_top = 51.0
 margin_right = 765.0
 margin_bottom = 472.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -975,17 +774,5 @@ __meta__ = {
 [connection signal="pressed" from="Buttons/TN" to="." method="_on_Button_pressed" binds= [ "Tennessee" ]]
 [connection signal="pressed" from="Buttons/KY" to="." method="_on_Button_pressed" binds= [ "Kentucky" ]]
 [connection signal="pressed" from="Buttons/LA" to="." method="_on_Button_pressed" binds= [ "Louisiana" ]]
-[connection signal="pressed" from="Disp/main/group/noLabel" to="Disp/main/chart" method="set_labels" binds= [ 0 ]]
-[connection signal="pressed" from="Disp/main/group/ordinate" to="Disp/main/chart" method="set_labels" binds= [ 1 ]]
-[connection signal="pressed" from="Disp/main/group/absciss" to="Disp/main/chart" method="set_labels" binds= [ 2 ]]
-[connection signal="pressed" from="Disp/main/group/legend" to="Disp/main/chart" method="set_labels" binds= [ 4 ]]
-[connection signal="pressed" from="Disp/main/group/all" to="Disp/main/chart" method="set_labels" binds= [ 7 ]]
-[connection signal="pressed" from="Disp/main/groupType/line" to="Disp/main" method="reset" flags=3]
-[connection signal="pressed" from="Disp/main/groupType/line" to="Disp/main/chart" method="set_chart_type" binds= [ 0 ]]
-[connection signal="pressed" from="Disp/main/groupType/pie" to="Disp/main" method="reset" flags=3]
-[connection signal="pressed" from="Disp/main/groupType/pie" to="Disp/main/chart" method="set_chart_type" binds= [ 1 ]]
-[connection signal="pressed" from="Disp/main/container/controls/clear" to="Disp/main/chart" method="clear_chart"]
-[connection signal="pressed" from="Disp/main/container/controls/add_data" to="Disp/main" method="reset"]
-[connection signal="value_changed" from="Disp/main/container/maxValues" to="Disp/main/chart" method="set_max_values"]
 [connection signal="pressed" from="Disp/X" to="." method="_on_X_pressed"]
 [connection signal="pressed" from="Disp/Refresh" to="." method="_on_Refresh_pressed"]
