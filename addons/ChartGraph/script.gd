@@ -135,29 +135,29 @@ func update_tooltip(data = null):
 #				points_color[key].a * COLOR_LINE_RATIO)
 #		}
 #
-#func set_labels(show_label):
-#	current_show_label = show_label
-#
-#	# Reset values
-#	min_y = 0.0
-#	min_x = 0.0
-#	max_y = get_size().y
-#	max_x = get_size().x
-#
-#	if current_show_label & LABELS_TO_SHOW.X_LABEL:
-#		max_y -= LABEL_SPACE.y
-#
-#	if current_show_label & LABELS_TO_SHOW.Y_LABEL:
-#		min_x += LABEL_SPACE.x
-#		max_x -= min_x
-#
-#	if current_show_label & LABELS_TO_SHOW.LEGEND_LABEL:
-#		min_y += LABEL_SPACE.y
-#		max_y -= min_y
-#
-#	move_other_sprites()
-#	update()
-#	tween_node.start() 
+func set_labels(show_label):
+	current_show_label = show_label
+
+	# Reset values
+	min_y = 0.0
+	min_x = 0.0
+	max_y = get_size().y
+	max_x = get_size().x
+
+	if current_show_label & LABELS_TO_SHOW.X_LABEL:
+		max_y -= LABEL_SPACE.y
+
+	if current_show_label & LABELS_TO_SHOW.Y_LABEL:
+		min_x += LABEL_SPACE.x
+		max_x -= min_x
+
+	if current_show_label & LABELS_TO_SHOW.LEGEND_LABEL:
+		min_y += LABEL_SPACE.y
+		max_y -= min_y
+
+	move_other_sprites()
+	update()
+	tween_node.start() 
 
 func _on_mouse_over(label_type):
 	current_mouse_over = label_type

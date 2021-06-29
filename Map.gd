@@ -137,6 +137,7 @@ func _on_request_completed(result, response_code, headers, body):
 
 
 func _on_Button_pressed(state):
+	chart()
 	$Buttons/ME.visible = false
 	print(state)
 	var disp = $Disp
@@ -180,3 +181,9 @@ func _on_X_pressed():
 	$Disp.visible = false
 	$Buttons/ME.visible = true
 	pass # Replace with function body.
+func chart():
+	$Disp/main.queue_free()
+	var scene = load("res://Scenes/Graph.tscn")
+	scene = scene.instance()
+	$Disp.add_child(scene)
+	
