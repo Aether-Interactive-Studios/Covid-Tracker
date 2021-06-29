@@ -31,7 +31,7 @@ run/main_scene="res://Map.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Aether/Covid_Tracker"
 boot_splash/image="res://aetherinteractivebrand.png"
-config/icon="res://icon.png"
+config/icon="res://CovidLogov2.png"
 
 [autoload]
 
