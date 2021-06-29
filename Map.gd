@@ -5,7 +5,7 @@ var idt = "\n"
 var location = storage + "Default.json"
 var save = File.new()
 var data
-
+var res = load("res://aetherinteractivebrand.png")
 
 func httpreq():
 	$HTTPRequest.connect("request_completed", self, "_on_request_completed")
@@ -18,6 +18,7 @@ func _ready():
 		httpreq()
 #		$HTTPRequest.request("https://covid-api.mmediagroup.fr/v1/cases")
 #		$HTTPRequest.request("https://localcoviddata.com/covid19/v1/high-level-policy?country=USA")
+		
 
 		
 		

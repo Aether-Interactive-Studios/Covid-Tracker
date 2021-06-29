@@ -74,10 +74,10 @@ __meta__ = {
 
 [node name="WS" type="Button" parent="Buttons"]
 modulate = Color( 1, 1, 1, 0.678431 )
-margin_left = 894.19
-margin_top = 346.568
-margin_right = 1017.19
-margin_bottom = 375.568
+margin_left = 899.939
+margin_top = 346.304
+margin_right = 1022.94
+margin_bottom = 375.304
 clip_text = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -85,10 +85,10 @@ __meta__ = {
 
 [node name="Washington DC" type="Button" parent="Buttons"]
 modulate = Color( 1, 1, 1, 0.580392 )
-margin_left = 879.919
-margin_top = 316.243
-margin_right = 1002.92
-margin_bottom = 345.243
+margin_left = 877.27
+margin_top = 316.0
+margin_right = 1000.27
+margin_bottom = 345.0
 clip_text = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -96,10 +96,10 @@ __meta__ = {
 
 [node name="MD" type="Button" parent="Buttons"]
 modulate = Color( 1, 1, 1, 0.588235 )
-margin_left = 907.0
-margin_top = 290.811
-margin_right = 1003.0
-margin_bottom = 319.811
+margin_left = 903.0
+margin_top = 291.0
+margin_right = 1009.0
+margin_bottom = 316.0
 clip_text = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -107,10 +107,10 @@ __meta__ = {
 
 [node name="DE" type="Button" parent="Buttons"]
 modulate = Color( 1, 1, 1, 0.619608 )
-margin_left = 908.0
-margin_top = 272.0
+margin_left = 913.0
+margin_top = 266.0
 margin_right = 1004.0
-margin_bottom = 296.0
+margin_bottom = 291.0
 clip_text = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -118,10 +118,10 @@ __meta__ = {
 
 [node name="NJ" type="Button" parent="Buttons"]
 modulate = Color( 1, 1, 1, 0.623529 )
-margin_left = 910.973
-margin_top = 247.621
-margin_right = 1006.97
-margin_bottom = 271.621
+margin_left = 913.0
+margin_top = 244.811
+margin_right = 1009.0
+margin_bottom = 269.811
 clip_text = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -162,10 +162,10 @@ __meta__ = {
 
 [node name="VT" type="Button" parent="Buttons"]
 modulate = Color( 1, 1, 1, 0.686275 )
-margin_left = 762.0
-margin_top = 62.0
-margin_right = 834.0
-margin_bottom = 86.0
+margin_left = 768.236
+margin_top = 59.7322
+margin_right = 840.236
+margin_bottom = 84.7322
 clip_text = true
 __meta__ = {
 "_edit_use_anchors_": false
