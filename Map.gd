@@ -14,6 +14,7 @@ func httpreq():
 
 
 func _ready():
+	_on_X_pressed()
 	if not save.file_exists(location):
 		$Buttons.visible = false
 		httpreq()
