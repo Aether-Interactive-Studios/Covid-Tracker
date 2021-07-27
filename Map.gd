@@ -184,7 +184,9 @@ func _on_Button_pressed(state):
 
 
 func _on_Refresh_pressed():
-	_on_Button_pressed(Globals.thestate)
+	_on_X_pressed()
+#	_on_Button_pressed(Globals.thestate)
+#	_on_X_pressed()
 	httpreq()
 	pass # Replace with function body.
 

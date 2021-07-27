@@ -714,9 +714,9 @@ flat = true
 
 [node name="Refresh" type="Button" parent="Disp"]
 margin_left = 33.1132
-margin_top = 17.8547
+margin_top = 16.7322
 margin_right = 156.114
-margin_bottom = 95.8549
+margin_bottom = 94.7324
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Refresh"
 __meta__ = {
