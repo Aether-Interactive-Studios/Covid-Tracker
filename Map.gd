@@ -172,7 +172,7 @@ func _on_Button_pressed(state):
 	pass # Replace with function body.
 
 
-func _on_Refresh_pssed():
+func _on_Refresh_pressed():
 	httpreq()
 	pass # Replace with function body.
 
@@ -180,9 +180,9 @@ func _on_Refresh_pssed():
 func _on_X_pressed():
 	$Disp.visible = false
 	$Buttons/ME.visible = true
+	Globals.state = true
 	pass # Replace with function body.
 func chart():
-	$Disp/main.queue_free()
 	var scene = load("res://Scenes/Graph.tscn")
 	scene = scene.instance()
 	$Disp.add_child(scene)

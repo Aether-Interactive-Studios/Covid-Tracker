@@ -16,8 +16,11 @@ func _ready():
   set_process(true)
 
 func _process(_delta):
-  fps_label.set_text('FPS: %02d' % [Engine.get_frames_per_second()])
-  points_label.set_text('NB POINTS: %d' % [chart_node.current_data.size() * 3.0])
+	fps_label.set_text('FPS: %02d' % [Engine.get_frames_per_second()])
+	points_label.set_text('NB POINTS: %d' % [chart_node.current_data.size() * 3.0])
+	if Globals.state == true:
+		Globals.state = false
+		queue_free()
 
 func reset(confirmed, deaths, day):
 #	for x in 10:
@@ -50,7 +53,7 @@ func reset(confirmed, deaths, day):
 		
 	}})
 #		print(deaths)
-
+	
 
 
 
