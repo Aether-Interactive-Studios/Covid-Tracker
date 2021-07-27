@@ -35,12 +35,14 @@ func reset(confirmed, deaths, day):
 #  })
 	var recent = 0
 	for x in 1:
+#		print(day)
 #		if day == recent:
 #			label = str(day)
 #			recent = day
 		chart_node.create_new_point({
 		
 		label = str(day),
+		
 			
 		
 		

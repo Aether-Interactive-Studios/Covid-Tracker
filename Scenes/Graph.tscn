@@ -5,7 +5,7 @@
 [ext_resource path="res://addons/ChartGraph/script.gd" type="Script" id=3]
 [ext_resource path="res://addons/ChartGraph/assets/fonts/THSarabunNew.tres" type="DynamicFont" id=4]
 
-[sub_resource type="ButtonGroup" id=3]
+[sub_resource type="ButtonGroup" id=1]
 resource_name = "decoration"
 
 [node name="main" type="Control"]
@@ -45,6 +45,7 @@ __meta__ = {
 }
 
 [node name="noLabel" type="CheckBox" parent="group"]
+visible = false
 margin_right = 132.0
 margin_bottom = 23.0
 custom_colors/font_color = Color( 0.172549, 0.192157, 0.215686, 1 )
@@ -52,10 +53,11 @@ custom_colors/font_color_hover = Color( 0.172549, 0.192157, 0.215686, 1 )
 custom_colors/font_color_pressed = Color( 0.172549, 0.192157, 0.215686, 1 )
 pressed = true
 action_mode = 0
-group = SubResource( 3 )
+group = SubResource( 1 )
 text = "No label"
 
 [node name="ordinate" type="CheckBox" parent="group"]
+visible = false
 margin_top = 23.0
 margin_right = 132.0
 margin_bottom = 46.0
@@ -63,10 +65,11 @@ custom_colors/font_color = Color( 0.172549, 0.192157, 0.215686, 1 )
 custom_colors/font_color_hover = Color( 0.172549, 0.192157, 0.215686, 1 )
 custom_colors/font_color_pressed = Color( 0.172549, 0.192157, 0.215686, 1 )
 action_mode = 0
-group = SubResource( 3 )
+group = SubResource( 1 )
 text = "Ordinates labels"
 
 [node name="absciss" type="CheckBox" parent="group"]
+visible = false
 margin_top = 46.0
 margin_right = 132.0
 margin_bottom = 69.0
@@ -74,10 +77,11 @@ custom_colors/font_color = Color( 0.172549, 0.192157, 0.215686, 1 )
 custom_colors/font_color_hover = Color( 0.172549, 0.192157, 0.215686, 1 )
 custom_colors/font_color_pressed = Color( 0.172549, 0.192157, 0.215686, 1 )
 action_mode = 0
-group = SubResource( 3 )
+group = SubResource( 1 )
 text = "Abscisses labels"
 
 [node name="legend" type="CheckBox" parent="group"]
+visible = false
 margin_top = 69.0
 margin_right = 132.0
 margin_bottom = 92.0
@@ -85,10 +89,11 @@ custom_colors/font_color = Color( 0.172549, 0.192157, 0.215686, 1 )
 custom_colors/font_color_hover = Color( 0.172549, 0.192157, 0.215686, 1 )
 custom_colors/font_color_pressed = Color( 0.172549, 0.192157, 0.215686, 1 )
 action_mode = 0
-group = SubResource( 3 )
+group = SubResource( 1 )
 text = "Legend labels"
 
 [node name="all" type="CheckBox" parent="group"]
+visible = false
 margin_top = 92.0
 margin_right = 132.0
 margin_bottom = 115.0
@@ -96,7 +101,7 @@ custom_colors/font_color = Color( 0.172549, 0.192157, 0.215686, 1 )
 custom_colors/font_color_hover = Color( 0.172549, 0.192157, 0.215686, 1 )
 custom_colors/font_color_pressed = Color( 0.172549, 0.192157, 0.215686, 1 )
 action_mode = 0
-group = SubResource( 3 )
+group = SubResource( 1 )
 text = "All labels"
 __meta__ = {
 "_edit_use_anchors_": false

@@ -5,6 +5,7 @@ var idt = "\n"
 var location = storage + "Default.json"
 var save = File.new()
 var data
+var graphscene = preload("res://Scenes/Graph.tscn")
 
 
 func httpreq():
@@ -137,7 +138,16 @@ func _on_request_completed(result, response_code, headers, body):
 
 
 func _on_Button_pressed(state):
+	Globals.thestate = state
+#	$Disp/main.queue_free()
+	
+#	var instance = graphscene.instance()
+#	print(instance)
+#	instance.set_name("main")
+#	$Disp.add_child(instance)
+	
 	chart()
+	
 	$Buttons/ME.visible = false
 	print(state)
 	var disp = $Disp
@@ -153,7 +163,7 @@ func _on_Button_pressed(state):
 	var oldidx = 0
 	var lastday = data[state].size()
 	
-	print(str(lastday))
+	print("last day" + str(lastday))
 	var newidx = 30
 	for x in range(1,90):
 		var idx = (-1 * x)
@@ -162,7 +172,7 @@ func _on_Button_pressed(state):
 		
 		
 		if newidx % 10 == 0 && newidx < lastday:
-			print(str(newidx))
+#			print(str(newidx))
 			
 			$Disp/main.reset( (data[state][newidx]['confirmed']), (data[state][newidx]['deaths']), newidx  )
 			newidx += 30
@@ -173,6 +183,7 @@ func _on_Button_pressed(state):
 
 
 func _on_Refresh_pressed():
+	_on_Button_pressed(Globals.thestate)
 	httpreq()
 	pass # Replace with function body.
 

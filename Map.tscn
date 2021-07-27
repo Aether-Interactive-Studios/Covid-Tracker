@@ -670,7 +670,6 @@ __meta__ = {
 }
 
 [node name="Disp" type="TextEdit" parent="."]
-visible = false
 modulate = Color( 1, 1, 1, 0.756863 )
 anchor_bottom = 0.014
 margin_left = 13.0
@@ -714,10 +713,10 @@ text = "X"
 flat = true
 
 [node name="Refresh" type="Button" parent="Disp"]
-margin_left = 51.0726
-margin_top = 16.7322
-margin_right = 174.073
-margin_bottom = 94.7324
+margin_left = 33.1132
+margin_top = 17.8547
+margin_right = 156.114
+margin_bottom = 95.8549
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Refresh"
 __meta__ = {
