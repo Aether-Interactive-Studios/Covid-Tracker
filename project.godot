@@ -8,6 +8,22 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "ReferenceRect",
+"class": "CGChart",
+"language": "GDScript",
+"path": "res://addons/ChartGraph/core/chart.gd"
+}, {
+"base": "CGChart",
+"class": "CGLine",
+"language": "GDScript",
+"path": "res://addons/ChartGraph/line_chart/line_chart.gd"
+} ]
+_global_script_class_icons={
+"CGChart": "",
+"CGLine": ""
+}
+
 [application]
 
 config/name="Covid Tracker"
@@ -15,11 +31,12 @@ run/main_scene="res://Map.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Aether/Covid_Tracker"
 boot_splash/image="res://aetherinteractivebrand.png"
-config/icon="res://icon.png"
+config/icon="res://CovidLogov2.png"
 
 [autoload]
 
 Globals="*res://Globals.gd"
+CGUtilities="*res://addons/ChartGraph/core/utilities.gd"
 
 [display]
 

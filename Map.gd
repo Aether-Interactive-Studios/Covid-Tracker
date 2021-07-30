@@ -5,6 +5,7 @@ var idt = "\n"
 var location = storage + "Default.json"
 var save = File.new()
 var data
+var graphscene = preload("res://Scenes/Graph.tscn")
 
 
 func httpreq():
@@ -13,6 +14,7 @@ func httpreq():
 
 
 func _ready():
+	_on_X_pressed()
 	if not save.file_exists(location):
 		$Buttons.visible = false
 		httpreq()
@@ -115,7 +117,7 @@ func _on_request_completed(result, response_code, headers, body):
 #		print(text)
 #		text = "Active Cases: " + str(place["confirmed"])
 #
-#		text += "\nDead: " + str(place["deaths"])
+#		text += "\nDead: " + str(place["Deaths"])
 #
 #		$TextEdit.text = text
 #	else:
@@ -137,6 +139,16 @@ func _on_request_completed(result, response_code, headers, body):
 
 
 func _on_Button_pressed(state):
+	Globals.thestate = state
+#	$Disp/main.queue_free()
+	
+#	var instance = graphscene.instance()
+#	print(instance)
+#	instance.set_name("main")
+#	$Disp.add_child(instance)
+	
+	chart()
+	
 	$Buttons/ME.visible = false
 	print(state)
 	var disp = $Disp
@@ -145,17 +157,26 @@ func _on_Button_pressed(state):
 #	disp.text = state
 #	print(data[state][-1])
 	var infodata = state + " " + str(data[state][-1]["date"]) + " Confirmed cases: " + str(data[state][-1]['confirmed'])  + "  Deaths: " + str(data[state][-1]['deaths'] + "\n")
-	
+#	print(str(infodata))
 #	var output = data[state][-1]["date"]
 #	$Disp/Label.text = infodata
 	var wholetext = ""
+	var oldidx = 0
+	var lastday = data[state].size()
+	
+	print("last day" + str(lastday))
+	var newidx = 30
 	for x in range(1,90):
 		var idx = (-1 * x)
 		infodata = state + " " + str(data[state][idx]["date"]) + " Confirmed cases: " + str(data[state][idx]['confirmed'])  + "  Deaths: " + str(data[state][idx]['deaths'] + "\n")
 		wholetext += infodata
 		
 		
-		
+		if newidx % 10 == 0 && newidx < lastday:
+#			print(str(newidx))
+			
+			$Disp/main.reset( (data[state][newidx]['confirmed']), (data[state][newidx]['deaths']), newidx  )
+			newidx += 30
 		$Disp/Label.text = wholetext
 #	print(data[state].length())
 	
@@ -163,6 +184,9 @@ func _on_Button_pressed(state):
 
 
 func _on_Refresh_pressed():
+	_on_X_pressed()
+#	_on_Button_pressed(Globals.thestate)
+#	_on_X_pressed()
 	httpreq()
 	pass # Replace with function body.
 
@@ -170,4 +194,10 @@ func _on_Refresh_pressed():
 func _on_X_pressed():
 	$Disp.visible = false
 	$Buttons/ME.visible = true
+	Globals.state = true
 	pass # Replace with function body.
+func chart():
+	var scene = load("res://Scenes/Graph.tscn")
+	scene = scene.instance()
+	$Disp.add_child(scene)
+	
